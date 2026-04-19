@@ -11,5 +11,5 @@ def login():
             session["Logged_in"]=True
             return redirect(url_for("home"))
         else:
-            return redirect(url_for("login"))
+            return render_template("login.html", error="Wrong password!")
     return render_template("login.html")

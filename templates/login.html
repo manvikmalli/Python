@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Password Manager</h1>
+        <h2>Enter Your Master Password To continue</h2>
+        <form action="/login" method="POST">
+            <div>
+                <label for="pwd">Master Password:</label>
+                <input type="password" id="pwd" name="password" placeholder="Enter Your Password" required>
+            </div>
+            <br>
+            <button type="submit">Submit Form</button>
+            {% if error %}
+            <p>{{ error }}</p>
+            {% endif %}
+        </form>
+    </body>
+</html>
